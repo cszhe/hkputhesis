@@ -1,0 +1,61 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   The Hong Kong Polytechnic University Thesis Skeleton
+%   Author: Zongjian He
+%   Email:  zongjian.he@connect.polyu.hk
+%
+%   This is the main file that passed to latex compiler.
+%   You should keep this file clean.
+%   Edit the included files whenever possible.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{hkputhesis}
+
+%% Add your packages here
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[cmex10]{amsmath, mathtools}
+\usepackage{amsthm}             % Theorem, proof
+\usepackage{amssymb}            % Symbols
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage[skip=2pt]{caption}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}           % Removed before printing.
+\usepackage{mathrsfs}
+
+%% Add your definitions here.
+\DeclareGraphicsExtensions{.pdf}
+\graphicspath{{./graph/}}
+\newtheorem{definition}{\bf Definition}
+\newtheorem{theorem}{\bf Theorem}
+\newtheorem{lemma}{\bf Lemma}
+\algnewcommand\algorithmicinput{\textbf{Input:}}
+\algnewcommand\Input{\item[\algorithmicinput]}
+\algrenewcommand{\algorithmiccomment}[1]{\hskip1em$//$ #1}
+\setlength{\belowcaptionskip}{-16pt}
+
+% change font
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+% Change these settings to your own values
+\title{Towards Writing a Beautiful Thesis\\ for Hong Kong Polytechnic University Degree}
+\author{Zongjian He}
+
+% make front page, abstract, publication, etc.
+\frontmatter
+% make TOC, list of figures/tables/abbreviation
+\mainmatter
+
+% put each chapter into a single file.
+\include{introduction}  % Chapter 1
+% \include{literature}    % Chapter 2
+% \include{conclusion}    % Chapter 8
+
+% citations, either alpha or plain are OK. Choose whatever you like
+\bibliographystyle{unsrt}   %{alpha}
+\bibliography{cite}     % specify the .bib file name
+
+\end{document}  % End, so easy.
