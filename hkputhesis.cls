@@ -19,11 +19,13 @@
 \ProvidesClass{hkputhesis}
 
 \newif\ifdedic@tion         \dedic@tionfalse
+\newif\if@tempbind          \@tempbindfalse
 
 \newcommand{\poly@ptsize}{12pt}
 \DeclareOption{10pt}{\renewcommand{\poly@ptsize}{10pt}}
 \DeclareOption{11pt}{\renewcommand{\poly@ptsize}{11pt}}
 \DeclareOption{12pt}{} % \poly@ptsize already set to 12pt
+\DeclareOption{tempbind}{\@tempbindtrue} % \poly@ptsize already set to 12pt
 
 \ProcessOptions
 
@@ -104,11 +106,14 @@
     \end{center}
     \vfill
     \begin{center}
-         A thesis submitted in partial fulfillment of the requirements for \\
-         the degree of \@degree \\
-         ~~\\
-         ~~\\
-         \@submitdate
+        A thesis submitted in partial fulfillment of the requirements for \\
+        the degree of \@degree \\
+        \@submitdate \\
+        \if@tempbind
+        ~~\\
+        Temporary Binding for Examination Purposes \\
+        ~~\\
+        \fi
     \end{center}
     \vskip0.1in
     \newpage}
@@ -155,8 +160,8 @@
     \pagestyle{plain}
     % three included files
     \include{abstract}
-    \include{acknowledgement}
     \include{publication}
+    \include{acknowledgement}
     }
 
 
@@ -176,16 +181,16 @@
 \renewenvironment{abstract}
 {\newpage \prefacesection{\abstractname}}
 
+\newcommand{\pubname}{Publications}
+\newenvironment{publication}%
+{\newpage \prefacesection{\pubname}}
+
 \newcommand{\ackname}{Acknowledgements}
 \newenvironment{acknowledgements}%
 {\newpage \prefacesection{\ackname}}
 
 \let\acknowledgments\acknowledgements
 \let\endacknowledgments\endacknowledgements
-
-\newcommand{\pubname}{Publications}
-\newenvironment{publication}%
-{\newpage \prefacesection{\pubname}}
 
 \newcommand{\abbname}{List of Abbreviations}
 \newenvironment{abbreviation}%
