@@ -289,9 +289,9 @@
     \setcounter{page}{1}
     \pagestyle{plain}
     % three included files; publication is optional
-    \poly@includeifexists{abstract}
+    \include{abstract}
     \poly@includeifexists{publication}
-    \poly@includeifexists{acknowledgement}
+    \include{acknowledgement}
     }
 
 
@@ -332,23 +332,23 @@
 \def\mainmatter{%
     \tableofcontents
     \ifpoly@lof
-        \cleardoublepage
+        \clearpage
         \phantomsection
         \addcontentsline{toc}{chapter}{\listfigurename}
         \listoffigures
     \fi
     \ifpoly@lot
-        \cleardoublepage
+        \clearpage
         \phantomsection
         \addcontentsline{toc}{chapter}{\listtablename}
         \listoftables
     \fi
     % abbreviation.tex is optional; delete it if you do not need the list
-    \cleardoublepage
+    \clearpage
     \poly@includeifexists{abbreviation}
 
     % reset the page counter
-    \cleardoublepage
+    \clearpage
     \pagenumbering{arabic}
     \properpagestyle
 }
@@ -360,7 +360,7 @@
 % table of contents. Done at \begin{document} so that it also works
 % with packages that redefine thebibliography, e.g., natbib.
 \def\poly@thebibliography#1{%
-    \cleardoublepage
+    \clearpage
     \phantomsection
     \addcontentsline{toc}{chapter}{\bibname}
     \@ldthebibliography{#1}}
