@@ -7,7 +7,16 @@
 %   You should keep this file clean.
 %   Edit the included files whenever possible.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[12pt]{hkputhesis}
+%   Class options:
+%     phd (default) | mphil       degree
+%     initial                     "Initial Submission for Examination
+%                                 Purpose" on the cover page. Remove it
+%                                 for the final (approved) thesis.
+%     onehalfspace (default) | doublespace
+%     print                       two-sided layout with binding margin
+%     nolof, nolot                omit the list of figures/tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,phd,initial]{hkputhesis}
 
 %% Add your packages here
 \usepackage{algorithm}
@@ -18,12 +27,12 @@
 \usepackage{amsfonts}
 \usepackage{booktabs}
 \usepackage[skip=2pt]{caption}
-\usepackage[pdftex]{graphicx}
-\usepackage{hyperref}           % Removed before printing.
+\usepackage{graphicx}
 \usepackage{mathrsfs}
+\usepackage{hyperref}           % Load last
+\hypersetup{hidelinks}
 
 %% Add your definitions here.
-\DeclareGraphicsExtensions{.pdf}
 \graphicspath{{./graph/}}
 \newtheorem{definition}{\bf Definition}
 \newtheorem{theorem}{\bf Theorem}
@@ -35,27 +44,46 @@
 
 % change font
 \usepackage[scaled]{helvet}
-\renewcommand\familydefault{\sfdefault} 
+\renewcommand\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
-
-\begin{document}
 
 % Change these settings to your own values
 \title{Towards Writing a Beautiful Thesis\\ for Hong Kong Polytechnic University Degree}
 \author{Zongjian He}
+\dept{Department of Computing}
+% \submitdate{September 2026}  % month and year of the initial submission
+% \awardyear{2027}             % year of award, shown on the cover page
+% Dual PhD only:
+% \partneruniversity{Name of Partner University}
+% \partnerdept{Name of Department at Partner University}
+% Transfer-in PhD only (adds the Statement of Research Attribution):
+% \attribution{3--5}{Prof. Chief Supervisor}{Name of Previous University}
+% Optional dedication:
+% \dedicate{To my family}
 
-% make front page, abstract, publication, etc.
+% PDF metadata
+\hypersetup{pdftitle={Towards Writing a Beautiful Thesis for Hong Kong Polytechnic University Degree},
+            pdfauthor={Zongjian He}}
+
+\begin{document}
+
+% make cover page, title page, certificate of originality,
+% abstract, publications and acknowledgements
 \frontmatter
-% make TOC, list of figures/tables/abbreviation
+% make TOC, list of figures/tables/abbreviations
 \mainmatter
 
 % put each chapter into a single file.
 \include{introduction}  % Chapter 1
 % \include{literature}    % Chapter 2
-% \include{conclusion}    % Chapter 8
+% \include{conclusion}    % Chapter 8: Conclusions and Suggestions for Future Research
 
-% citations, either alpha or plain are OK. Choose whatever you like
-\bibliographystyle{unsrt}   %{alpha}
+% \appendix
+% \include{appendix}
+
+% References must be in alphabetical order of the first author,
+% so use a sorted style such as plain, alpha or plainnat (with natbib).
+\bibliographystyle{plain}
 \bibliography{cite}     % specify the .bib file name
 
 \end{document}  % End, so easy.
