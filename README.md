@@ -1,5 +1,7 @@
 # hkputhesis
 
+[![Open in Overleaf](https://img.shields.io/badge/Open%20in-Overleaf-47A141?logo=overleaf&logoColor=white)](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fcszhe%2Fhkputhesis%2Farchive%2Frefs%2Fheads%2Fmaster.zip&engine=pdflatex)
+
 The unofficial LaTeX class file for PhD/MPhil thesis of the Hong Kong Polytechnic University.
 
 Version 2.0 follows the *Regulations on the Format and Presentation of Thesis for RPg
@@ -7,6 +9,8 @@ Degrees* in the [PolyU Research Postgraduate Student Handbook](https://www.polyu
 Always check the latest regulations before submitting.
 
 ## Usage
+
+Click **Open in Overleaf** above to start a new Overleaf project from the latest version of this template. If Overleaf cannot find the main file, set it to `main.tex` under **Menu → Main document**.
 
 Compile `main.tex` with `pdflatex` (or `latexmk -pdf main.tex`). The front matter is built
 from `abstract.tex`, `publication.tex` (optional), `acknowledgement.tex` and
